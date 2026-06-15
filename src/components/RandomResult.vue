@@ -373,15 +373,16 @@ onUnmounted(() => {
   text-align: center;
   padding: var(--space-md) var(--space-lg) !important;
   position: relative;
-  background: transparent !important;
+  background: var(--color-sdv-cream) !important;
+  border-color: var(--color-sdv-gold) !important;
 }
 
 .random-result__value {
-  font-family: 'Comic Sans MS', 'Chalkboard SE', var(--font-pixel);
+  font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', 'Comic Sans MS', cursive;
   font-size: var(--font-size-xxl);
   font-weight: bold;
   padding: var(--space-xs) var(--space-sm);
-  line-height: 1.3;
+  line-height: 1.4;
   letter-spacing: 2px;
 }
 
