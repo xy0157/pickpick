@@ -16,4 +16,11 @@ const router = createRouter({
   routes
 })
 
+// Handle GitHub Pages SPA redirect
+const redirect = sessionStorage.getItem('spa_redirect')
+if (redirect) {
+  sessionStorage.removeItem('spa_redirect')
+  router.replace(redirect)
+}
+
 export default router

@@ -7,9 +7,24 @@ export default defineConfig({
   plugins: [
     vue(),
     {
-      name: 'copy-404',
+      name: 'generate-404',
       writeBundle() {
-        try { copyFileSync('dist/index.html', 'dist/404.html') } catch {}
+        const content = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PickPick</title>
+  <script>
+    var path = location.pathname.replace(/\\/pickpick\\//, '');
+    if (path && path !== '') {
+      sessionStorage.setItem('spa_redirect', '/' + path + location.search);
+    }
+    location.replace('/pickpick/');
+  </script>
+</head>
+<body></body>
+</html>`;
+        try { require('fs').writeFileSync('dist/404.html', content) } catch {}
       }
     }
   ],
