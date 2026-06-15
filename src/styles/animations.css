@@ -22,7 +22,7 @@
   animation: shake 0.4s linear;
 }
 
-/* 结果弹出 */
+/* 结果弹出 (保留) */
 @keyframes bounceIn {
   0% { transform: scale(0); }
   50% { transform: scale(1.15); }
@@ -32,4 +32,58 @@
 
 .bounce-in {
   animation: bounceIn 0.5s ease-out;
+}
+
+/* ===== 星露谷物语动画 ===== */
+
+/* SDV 道具获得弹出 (带星芒效果) */
+@keyframes sdvItemPop {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  40% { transform: scale(1.2) rotate(3deg); opacity: 1; }
+  70% { transform: scale(0.95) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.sdv-item-pop {
+  animation: sdvItemPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 星芒闪烁 */
+@keyframes starBurst {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.5) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+.star-burst {
+  animation: starBurst 0.8s ease-out forwards;
+}
+
+/* 落叶漂浮 */
+@keyframes leafFloat {
+  0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 1; }
+  25% { transform: translateY(-30px) rotate(90deg) translateX(15px); opacity: 0.9; }
+  50% { transform: translateY(-60px) rotate(180deg) translateX(-10px); opacity: 0.7; }
+  75% { transform: translateY(-90px) rotate(270deg) translateX(20px); opacity: 0.4; }
+  100% { transform: translateY(-120px) rotate(360deg) translateX(0); opacity: 0; }
+}
+
+.leaf-float {
+  animation: leafFloat 2s ease-out forwards;
+}
+
+/* 彩屑粒子飞散 */
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translateY(var(--fall-distance, 80px)) rotate(var(--spin, 360deg)) scale(0.3); opacity: 0; }
+}
+
+/* SDV 选中高亮脉冲 */
+@keyframes sdvPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 200, 50, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 200, 50, 0); }
+}
+
+.sdv-pulse {
+  animation: sdvPulse 1.5s ease-in-out infinite;
 }

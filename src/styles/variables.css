@@ -1,5 +1,5 @@
 :root {
-  /* 彩虹活力主色 */
+  /* 彩虹活力主色 (保留) */
   --color-red: #FF6B6B;
   --color-yellow: #FFE66D;
   --color-cyan: #4ECDC4;
@@ -7,18 +7,33 @@
   --color-orange: #FF9F43;
   --color-purple: #AA96DA;
 
-  /* 功能色 */
+  /* 星露谷物语 - 木色系 */
+  --color-sdv-brown-dark: #5c4a3d;
+  --color-sdv-brown: #8b6f47;
+  --color-sdv-wood: #CD853F;
+  --color-sdv-wood-light: #DEB887;
+  --color-sdv-cream: #F5DEB3;
+  --color-sdv-gold: #DAA520;
+  --color-sdv-warm-bg: #FFF8DC;
+  --color-sdv-leaf: #8FBC8F;
+  --color-sdv-sky: #87CEEB;
+
+  /* 功能色 (SDV 暖化) */
   --color-bg: #FFF8F0;
-  --color-text: #333333;
-  --color-border: #333333;
-  --color-white: #FFFFFF;
-  --color-gray: #888888;
-  --color-gray-light: #f0f0f0;
+  --color-text: #5c4a3d;
+  --color-border: #5c4a3d;
+  --color-white: #FFFEF5;
+  --color-gray: #8b6f47;
+  --color-gray-light: #F5DEB3;
 
   /* 像素风格 */
   --border-thick: 3px solid var(--color-border);
+  --border-medium: 2px solid var(--color-border);
+  --border-sdv-outer: 3px solid var(--color-sdv-brown-dark);
+  --border-sdv-inner: 2px solid var(--color-sdv-wood-light);
   --radius-pixel: 4px;
-  --shadow-pixel: 4px 4px 0 var(--color-border);
+  --shadow-pixel: 4px 4px 0 var(--color-sdv-brown-dark);
+  --shadow-sdv: 3px 3px 0 var(--color-sdv-brown);
 
   /* 间距 */
   --space-xs: 4px;
