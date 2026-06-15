@@ -71,14 +71,8 @@
 
         <div class="sdv-frame" style="display:inline-block;">
           <div class="sdv-frame__inner random-result__result-inner">
-            <div class="random-result__sdv-decoration-top">
-              <span>🌿</span><span>✨</span><span>🌾</span>
-            </div>
             <div class="random-result__value" :style="{ color: activeColor }">
               {{ displayText }}
-            </div>
-            <div class="random-result__sdv-decoration-bottom">
-              <span>🌾</span><span>✨</span><span>🌿</span>
             </div>
           </div>
         </div>
@@ -379,30 +373,16 @@ onUnmounted(() => {
   text-align: center;
   padding: var(--space-md) var(--space-lg) !important;
   position: relative;
-  overflow: hidden;
-}
-
-/* SDV 顶部/底部装饰 */
-.random-result__sdv-decoration-top,
-.random-result__sdv-decoration-bottom {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  font-size: 12px;
-  opacity: 0.6;
-}
-.random-result__sdv-decoration-top {
-  margin-bottom: 8px;
-}
-.random-result__sdv-decoration-bottom {
-  margin-top: 8px;
+  background: transparent !important;
 }
 
 .random-result__value {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', var(--font-pixel);
   font-size: var(--font-size-xxl);
   font-weight: bold;
   padding: var(--space-xs) var(--space-sm);
   line-height: 1.3;
+  letter-spacing: 2px;
 }
 
 /* 星芒 */

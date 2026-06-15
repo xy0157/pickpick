@@ -93,7 +93,7 @@ body {
 }
 
 .sdv-frame__inner {
-  background: var(--color-white);
+  background: var(--color-bg);
   border: 2px solid var(--color-sdv-wood);
   border-radius: 2px;
   padding: var(--space-md);
