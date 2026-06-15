@@ -36,6 +36,17 @@
       已点：{{ calledNames.join('、') }}
     </div>
 
+    <!-- 选项标签 -->
+    <div class="pixel-card" style="margin-bottom:12px;padding:8px 12px;text-align:center;">
+      <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;">
+        <span
+          v-for="(opt, i) in availableOptions" :key="i"
+          style="background:var(--color-gray-light);padding:2px 8px;border-radius:3px;font-size:13px;border:1px solid var(--color-sdv-brown);"
+        >{{ opt }}</span>
+      </div>
+      <div style="font-size:12px;color:var(--color-gray);margin-top:4px;">剩余 {{ availableOptions.length }} 人 · 已点 {{ calledNames.length }} 人</div>
+    </div>
+
     <RandomResult
       v-if="showResult"
       :result="pickedResult"
