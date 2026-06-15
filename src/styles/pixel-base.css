@@ -81,6 +81,7 @@ body {
   margin: 0 auto;
   padding: var(--space-md);
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* 顶部导航 */
