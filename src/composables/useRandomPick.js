@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 export function useRandomPick(options) {
   const allOptions = ref(options || [])
   const currentResult = ref(null)
-  const isPicking = ref(false)
   const history = ref([])
 
   const optionCount = computed(() => allOptions.value.length)
@@ -38,13 +37,11 @@ export function useRandomPick(options) {
 
   function reset() {
     currentResult.value = null
-    isPicking.value = false
   }
 
   return {
     allOptions,
     currentResult,
-    isPicking,
     optionCount,
     history,
     setOptions,

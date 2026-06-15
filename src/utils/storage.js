@@ -21,11 +21,19 @@ export function loadFromStorage(key, defaultValue = null) {
 }
 
 export function removeFromStorage(key) {
-  localStorage.removeItem(STORAGE_PREFIX + key)
+  try {
+    localStorage.removeItem(STORAGE_PREFIX + key)
+  } catch (e) {
+    console.error('Storage remove failed:', e)
+  }
 }
 
 export function clearAllStorage() {
-  Object.keys(localStorage)
-    .filter(k => k.startsWith(STORAGE_PREFIX))
-    .forEach(k => localStorage.removeItem(k))
+  try {
+    Object.keys(localStorage)
+      .filter(k => k.startsWith(STORAGE_PREFIX))
+      .forEach(k => localStorage.removeItem(k))
+  } catch (e) {
+    console.error('Storage clear failed:', e)
+  }
 }

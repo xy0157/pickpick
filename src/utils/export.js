@@ -30,24 +30,24 @@ export function importJSON(data, mode = 'merge') {
   if (!data || !data.version) return { success: false, error: '无效的备份文件' }
 
   if (mode === 'overwrite') {
-    if (data.history) saveToStorage('history', data.history)
-    if (data.customLists) saveToStorage('customLists', data.customLists)
-    if (data.settings) saveToStorage('settings', data.settings)
+    if (data.history) saveToStorage(HISTORY_KEY, data.history)
+    if (data.customLists) saveToStorage(CUSTOM_LISTS_KEY, data.customLists)
+    if (data.settings) saveToStorage(SETTINGS_KEY, data.settings)
     return { success: true, mode: 'overwrite' }
   }
 
   // merge mode
   if (data.history) {
-    const existing = loadFromStorage('history', [])
-    saveToStorage('history', [...existing, ...data.history])
+    const existing = loadFromStorage(HISTORY_KEY, [])
+    saveToStorage(HISTORY_KEY, [...existing, ...data.history])
   }
   if (data.customLists) {
-    const existing = loadFromStorage('customLists', {})
-    saveToStorage('customLists', { ...existing, ...data.customLists })
+    const existing = loadFromStorage(CUSTOM_LISTS_KEY, {})
+    saveToStorage(CUSTOM_LISTS_KEY, { ...existing, ...data.customLists })
   }
   if (data.settings) {
-    const existing = loadFromStorage('settings', {})
-    saveToStorage('settings', { ...existing, ...data.settings })
+    const existing = loadFromStorage(SETTINGS_KEY, {})
+    saveToStorage(SETTINGS_KEY, { ...existing, ...data.settings })
   }
   return { success: true, mode: 'merge' }
 }
